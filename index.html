@@ -8,6 +8,10 @@
 <!-- 架空の教室なので、検索結果に出ないよう noindex を指定しています -->
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="style.css">
+<!-- 動きをつけるためのJavaScript。defer を付けず head で読み込むのは、
+     本文が表示される前に「JSが動いている」目印（html の js クラス）を付けて、
+     ふわっと出す要素が一瞬見えてから消える“ちらつき”を防ぐため -->
+<script src="script.js"></script>
 </head>
 <body>
 
@@ -20,9 +24,9 @@
     <span class="dot dot--1"></span>
     <span class="dot dot--2"></span>
     <span class="dot dot--3"></span>
-    <span class="note note--1">♪</span>
-    <span class="note note--2">♫</span>
-    <span class="note note--3">♪</span>
+    <span class="float-note float-note--1">♪</span>
+    <span class="float-note float-note--2">♫</span>
+    <span class="float-note float-note--3">♪</span>
   </div>
 
   <div class="container hero__inner">
@@ -59,15 +63,15 @@
      ============================================================ -->
 <section class="section bg-white" id="worries">
   <div class="container">
-    <h2 class="section__title">こんなこと、ありませんか？</h2>
-    <ul class="worry-list">
+    <h2 class="section__title" data-reveal>こんなこと、ありませんか？</h2>
+    <ul class="worry-list" data-reveal-group>
       <li>子どもには幸せに育ってほしい。<br>自分にできることを、ちゃんとしてあげたい</li>
       <li>毎日おうちで2人きり。<br>今日は何して過ごそう…と時間が長く感じる</li>
       <li>少しでいいから、<br>大人とおしゃべりする時間がほしい</li>
       <li>何か習い事をと思うけれど、<br>まだ小さくて何がいいのかわからない</li>
       <li>どう遊んであげたらいいのか、<br>これで合っているのか、ふと不安になる</li>
     </ul>
-    <p class="worry-answer">
+    <p class="worry-answer" data-reveal>
       どれも、子どもと真剣に向き合っているからこそ。<br>
       「おとのは」は、そんなママが<br class="sp-only">ほっとひと息つける場所でありたいと思っています。
     </p>
@@ -79,14 +83,15 @@
      ============================================================ -->
 <section class="section bg-yellow" id="power">
   <div class="container">
-    <h2 class="section__title">リトミックで、<br class="sp-only">じわじわ育つ力</h2>
-    <p class="section__lead">
+    <span class="float-note float-note--power" aria-hidden="true">♪</span>
+    <h2 class="section__title" data-reveal>リトミックで、<br class="sp-only">じわじわ育つ力</h2>
+    <p class="section__lead" data-reveal>
       リトミックは、音楽に合わせて体を動かす遊びです。<br>
       すぐに何かができるようになるものではありませんが、<br class="pc-only">
       楽しく続けるなかで、これからの育ちの「土台づくり」につながっていきます。
     </p>
 
-    <ul class="power-grid">
+    <ul class="power-grid" data-reveal-group>
       <li class="power-card">
         <span class="power-card__icon" aria-hidden="true">♪</span>
         <h3>音感とリズム感</h3>
@@ -118,7 +123,7 @@
         <p>抱っこでゆれたり、目を合わせて笑ったり。ふれあいの時間そのものが宝物です。</p>
       </li>
     </ul>
-    <p class="note-small">※感じ方や育ち方には一人ひとり個性があります。その子のペースを大切にしています。</p>
+    <p class="note-small" data-reveal>※感じ方や育ち方には一人ひとり個性があります。その子のペースを大切にしています。</p>
   </div>
 </section>
 
@@ -127,7 +132,7 @@
      ============================================================ -->
 <section class="section bg-mint" id="column">
   <div class="container">
-    <div class="column-box">
+    <div class="column-box" data-reveal>
       <p class="column-box__label">ちょっとコラム</p>
       <h2 class="column-box__title">テストでは測れない<br class="sp-only">「非認知能力」のこと</h2>
       <p>
@@ -151,9 +156,9 @@
      ============================================================ -->
 <section class="section bg-white" id="for-mama">
   <div class="container">
-    <h2 class="section__title">ママにとっても、<br class="sp-only">うれしいこと</h2>
-    <p class="section__lead">おとのはは、子どものためだけでなく、ママのための時間でもあります。</p>
-    <ul class="merit-list">
+    <h2 class="section__title" data-reveal>ママにとっても、<br class="sp-only">うれしいこと</h2>
+    <p class="section__lead" data-reveal>おとのはは、子どものためだけでなく、ママのための時間でもあります。</p>
+    <ul class="merit-list" data-reveal-group>
       <li class="merit">
         <span class="merit__num">01</span>
         <div>
@@ -191,12 +196,12 @@
      ============================================================ -->
 <section class="section bg-yellow" id="classes">
   <div class="container">
-    <h2 class="section__title">年齢別のクラス</h2>
-    <p class="section__lead">
+    <h2 class="section__title" data-reveal>年齢別のクラス</h2>
+    <p class="section__lead" data-reveal>
       月齢に合った内容で、1クラス6組ほどの少人数制。<br>
       まわりを気にせず、その子のペースで参加できます。
     </p>
-    <div class="class-grid">
+    <div class="class-grid" data-reveal-group>
       <article class="class-card class-card--1">
         <p class="class-card__age">0〜1歳</p>
         <h3 class="class-card__name">ぽかぽかクラス</h3>
@@ -216,7 +221,7 @@
         <p class="class-card__time">例）木曜 10:00〜10:45</p>
       </article>
     </div>
-    <p class="note-small">※曜日・時間は一例です。お子さまの月齢やご都合に合わせてご相談ください。</p>
+    <p class="note-small" data-reveal>※曜日・時間は一例です。お子さまの月齢やご都合に合わせてご相談ください。</p>
   </div>
 </section>
 
@@ -225,9 +230,9 @@
      ============================================================ -->
 <section class="section bg-mint" id="flow">
   <div class="container">
-    <h2 class="section__title">体験レッスン当日の流れ</h2>
-    <p class="section__lead">45分のレッスンです。途中で休憩や授乳をしても大丈夫ですよ。</p>
-    <ol class="timeline">
+    <h2 class="section__title" data-reveal>体験レッスン当日の流れ</h2>
+    <p class="section__lead" data-reveal>45分のレッスンです。途中で休憩や授乳をしても大丈夫ですよ。</p>
+    <ol class="timeline" data-reveal-group>
       <li>
         <span class="timeline__time">10分前</span>
         <div class="timeline__body">
@@ -271,7 +276,7 @@
         </div>
       </li>
     </ol>
-    <p class="note-small">※入会のご案内はご希望の方にだけお渡しします。その場でのお返事は不要です。</p>
+    <p class="note-small" data-reveal>※入会のご案内はご希望の方にだけお渡しします。その場でのお返事は不要です。</p>
   </div>
 </section>
 
@@ -280,8 +285,8 @@
      ============================================================ -->
 <section class="section bg-white" id="teacher">
   <div class="container">
-    <h2 class="section__title">先生の紹介</h2>
-    <div class="teacher">
+    <h2 class="section__title" data-reveal>先生の紹介</h2>
+    <div class="teacher" data-reveal>
       <!-- 写真が入る想定の場所。画像の代わりに淡い色のボックスを置いています -->
       <div class="photo-placeholder teacher__photo">写真イメージ</div>
       <div class="teacher__text">
@@ -312,8 +317,8 @@
      ============================================================ -->
 <section class="section bg-yellow" id="price">
   <div class="container">
-    <h2 class="section__title">料金と開催概要</h2>
-    <div class="table-wrap">
+    <h2 class="section__title" data-reveal>料金と開催概要</h2>
+    <div class="table-wrap" data-reveal>
       <table class="info-table">
         <tbody>
           <tr>
@@ -355,12 +360,13 @@
      ============================================================ -->
 <section class="section bg-mint" id="faq">
   <div class="container">
-    <h2 class="section__title">よくあるご質問</h2>
-    <p class="section__lead">
+    <span class="float-note float-note--faq" aria-hidden="true">♫</span>
+    <h2 class="section__title" data-reveal>よくあるご質問</h2>
+    <p class="section__lead" data-reveal>
       泣いても、人見知りでも大丈夫。<br>
       見ているだけでも、子どもはちゃんと吸収しています。
     </p>
-    <div class="faq-list">
+    <div class="faq-list" data-reveal-group>
       <details class="faq">
         <summary>泣いてしまっても大丈夫ですか？</summary>
         <div class="faq__answer">
@@ -406,14 +412,14 @@
      ============================================================ -->
 <section class="section bg-yellow" id="apply">
   <div class="container">
-    <h2 class="section__title">体験レッスンのお申し込み</h2>
-    <p class="section__lead">
+    <h2 class="section__title" data-reveal>体験レッスンのお申し込み</h2>
+    <p class="section__lead" data-reveal>
       ご入力いただいた内容を確認して、<br class="sp-only">先生からご連絡します。<br>
       わからない項目は空欄のままでも大丈夫ですよ。
     </p>
 
     <!-- action を指定せず、送信ボタンも disabled（押せない状態）にしています -->
-    <form class="apply-form">
+    <form class="apply-form" data-reveal>
       <div class="form-row">
         <label for="name">保護者さまのお名前 <span class="req">必須</span></label>
         <input type="text" id="name" name="name" placeholder="例）岡崎 はなこ" autocomplete="name">
